@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Satoshi University — School of Cryptographic Sciences</title>
+    <meta name="description" content="The premier crypto education platform. Courses taught by Vitalik Buterin, Andreas Antonopoulos, Brian Armstrong, and more." />
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#f0c040" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="SatoshiU" />
+    <link rel="apple-touch-icon" href="/icon-192.svg" />
+
+    <!-- OG / Social -->
+    <meta property="og:title" content="Satoshi University — School of Cryptographic Sciences" />
+    <meta property="og:description" content="14 courses, 12 world-class professors, quizzes, exams, and career pathways. From fundamentals to mastery." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/icon-512.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Satoshi University" />
+    <meta name="twitter:description" content="From crypto fundamentals to subject matter expertise. Courses by Vitalik Buterin, Brian Armstrong, and more." />
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>₿</text></svg>" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body { background: #0a0c14; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: 'Crimson Pro', Georgia, serif; }
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: #0a0c14; }
+      ::-webkit-scrollbar-thumb { background: #2a2d3e; border-radius: 3px; }
+      :focus-visible { outline: 2px solid #f0c040; outline-offset: 2px; }
+      .offline-banner { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #f0c040; color: #0a0c14; text-align: center; padding: 8px; font-size: 13px; font-weight: 700; font-family: 'JetBrains Mono', monospace; z-index: 9999; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div class="offline-banner" id="offline-banner">You're offline — all coursework still available</div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      window.addEventListener('offline', () => { document.getElementById('offline-banner').style.display = 'block'; });
+      window.addEventListener('online', () => { document.getElementById('offline-banner').style.display = 'none'; });
+    </script>
+  </body>
+</html>
